@@ -66,9 +66,9 @@ let rotationDirection = "natural";
 startEl.addEventListener("click", function () {
     let interval;
     if (rotationDirection === "natural") {
-        interval = setInterval(goNextSlide, 500);
+        interval = setInterval(goNextSlide, 3000);
     } else {
-        interval = setInterval(goPrevSlide, 500);
+        interval = setInterval(goPrevSlide, 3000);
     }
 
     startEl.classList.add("d-none");
