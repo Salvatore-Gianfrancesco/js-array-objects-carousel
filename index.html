@@ -15,12 +15,22 @@
     <script src="./assets/js/main.js" defer></script>
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark position-relative">
     <div class="container mt-5">
         <div class="row g-1 h-100">
             <!-- Slides -->
-            <div class="col-10 h-100">
+            <div class="col-10 h-100 position-relative">
                 <div class="slides d-flex justify-content-center"></div>
+
+                <div class="autoplay">
+                    <button type="button" class="btn btn-light start fs-4 opacity-100">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+    
+                    <button type="button" class="btn btn-light stop fs-4 opacity-100 d-none">
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+                </div>
             </div>
 
             <!-- Thumbnails  -->
@@ -36,6 +46,9 @@
                 </button>
             </div>
         </div>
+    </div>
+
+    <div class="autoplay">
     </div>
 
     <!-- Bootstrap JS -->

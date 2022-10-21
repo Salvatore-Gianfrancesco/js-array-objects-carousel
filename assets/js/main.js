@@ -52,7 +52,29 @@ let currentThumb = document.querySelector(".active_thumb");
 
 const prevSlide = document.querySelector(".prev_img");
 // console.log(prevSlide);
-prevSlide.addEventListener("click", function () {
+prevSlide.addEventListener("click", goPrevSlide);
+
+const nextSlide = document.querySelector(".next_img");
+// console.log(nextSlide);
+nextSlide.addEventListener("click", goNextSlide);
+
+const startEl = document.querySelector(".start");
+const stopEl = document.querySelector(".stop");
+// console.log(startEl);
+startEl.addEventListener("click", function () {
+    const interval = setInterval(goNextSlide, 3000);
+
+    startEl.classList.add("d-none");
+    stopEl.classList.remove("d-none");
+
+    stopEl.addEventListener("click", function () {
+        startEl.classList.remove("d-none");
+        stopEl.classList.add("d-none");
+        clearInterval(interval);
+    })
+})
+
+function goPrevSlide() {
     // console.log("prev");
     if (activeSlide === 0) {
         activeSlide = images.length - 1;
@@ -67,18 +89,16 @@ prevSlide.addEventListener("click", function () {
     currentThumb.classList.remove("active_thumb");
     currentThumb = document.querySelector(`.thumbs img:nth-child(${activeSlide + 1})`);
     currentThumb.classList.add("active_thumb");
-});
+}
 
-const nextSlide = document.querySelector(".next_img");
-// console.log(nextSlide);
-nextSlide.addEventListener("click", function () {
+function goNextSlide() {
     // console.log("next");
     if (activeSlide === images.length - 1) {
         activeSlide = 0;
     } else {
         activeSlide++;
     }
-    console.log(activeSlide);
+    // console.log(activeSlide);
     currentSlide.classList.remove("active");
     currentSlide = document.querySelector(`.slides img:nth-child(${activeSlide + 1})`);
     currentSlide.classList.add("active");
@@ -86,4 +106,4 @@ nextSlide.addEventListener("click", function () {
     currentThumb.classList.remove("active_thumb");
     currentThumb = document.querySelector(`.thumbs img:nth-child(${activeSlide + 1})`);
     currentThumb.classList.add("active_thumb");
-});
+}
