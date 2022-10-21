@@ -60,18 +60,35 @@ nextSlide.addEventListener("click", goNextSlide);
 
 const startEl = document.querySelector(".start");
 const stopEl = document.querySelector(".stop");
+const rotateEl = document.querySelector(".rotate");
+let rotationDirection = "natural";
 // console.log(startEl);
 startEl.addEventListener("click", function () {
-    const interval = setInterval(goNextSlide, 3000);
+    let interval;
+    if (rotationDirection === "natural") {
+        interval = setInterval(goNextSlide, 500);
+    } else {
+        interval = setInterval(goPrevSlide, 500);
+    }
 
     startEl.classList.add("d-none");
     stopEl.classList.remove("d-none");
+    rotateEl.classList.add("d-none");
 
     stopEl.addEventListener("click", function () {
         startEl.classList.remove("d-none");
         stopEl.classList.add("d-none");
+        rotateEl.classList.remove("d-none");
         clearInterval(interval);
     })
+})
+
+rotateEl.addEventListener("click", function () {
+    if (rotationDirection === "natural") {
+        rotationDirection = "reverse";
+    } else {
+        rotationDirection = "natural";
+    }
 })
 
 function goPrevSlide() {

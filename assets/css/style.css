@@ -46,8 +46,8 @@ img.active_thumb {
     transform: translate(-50%, 0);
 }
 
-.autoplay{
-    position:absolute;
+.autoplay {
+    position: absolute;
     bottom: 10px;
     left: 10px;
 }
