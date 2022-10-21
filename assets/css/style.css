@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.slides img {
+    height: 750px;
+    display: none;
+    width: 100%;
+}
+
+img.active {
+    display: block;
+}
+
+.thumbs img {
+    height: 150px;
+    width: 100%;
+    opacity: 50%;
+}
+
+img.active_thumb {
+    opacity: 100%;
+}
+
+button {
+    position: absolute;
+    opacity: 70%;
+}
+
+.prev_img {
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.next_img {
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
