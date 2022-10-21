@@ -35,15 +35,15 @@ const images = [
 }) */
 
 const slidesEl = document.querySelector(".slides");
-// const thumbsEl = document.querySelector(".thumbs")
+const thumbsEl = document.querySelector(".thumbs")
 images.forEach(image => {
     const imgMarkup = '<img src="./assets/' + image.image + '" alt="">';
     // console.log(imgMarkup);
     slidesEl.insertAdjacentHTML("beforeend", imgMarkup);
-    // thumbsEl.insertAdjacentHTML("beforeend", imgMarkup);
+    thumbsEl.insertAdjacentHTML("beforeend", imgMarkup);
 });
 document.querySelector(".slides > img").classList.add("active");
-// document.querySelector(".thumbs > img").classList.add("active_thumb");
+document.querySelector(".thumbs > img").classList.add("active_thumb");
 
 let activeSlide = 0;
 let currentSlide = document.querySelector(".active");
